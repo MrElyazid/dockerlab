@@ -1,0 +1,19 @@
+services:
+  stirling-pdf:
+    image: stirlingtools/stirling-pdf:2.14.3
+    container_name: stirling-pdf
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8090:8080"
+    environment:
+      DISABLE_ADDITIONAL_FEATURES: "false"
+      SECURITY_ENABLELOGIN: "true"
+      SECURITY_INITIALLOGIN_USERNAME: ${STIRLING_USERNAME}
+      SECURITY_INITIALLOGIN_PASSWORD: ${STIRLING_PASSWORD}
+      SYSTEM_FRONTENDURL: https://pdf.elyazid.dev
+    volumes:
+      - ./data/configs:/configs
+      - ./data/logs:/logs
+      - ./data/pipeline:/pipeline
+      - ./data/customFiles:/customFiles
+      - ./data/tessdata:/usr/share/tessdata

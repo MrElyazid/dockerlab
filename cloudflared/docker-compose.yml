@@ -1,0 +1,7 @@
+services:
+  cloudflared:
+    image: cloudflare/cloudflared:2026.9.1
+    container_name: cloudflared
+    restart: unless-stopped
+    network_mode: host
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}

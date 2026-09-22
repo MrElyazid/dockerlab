@@ -1,0 +1,10 @@
+# runtime state (bind mounts in every app folder)
+data/
+
+# secrets
+.env
+
+# leftovers / generated files
+*.bak
+*.log
+__pycache__/

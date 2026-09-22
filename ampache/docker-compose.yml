@@ -1,0 +1,25 @@
+services:
+  ampache:
+    image: ampache/ampache:7.10.3
+    container_name: ampache
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:80"
+    environment:
+      TZ: Europe/Paris
+      MYSQL_USER: admin
+      MYSQL_PASS: ${MYSQL_PASS}
+      DB_NAME: ampache
+      DB_HOST: localhost
+      DB_USER: admin
+      DB_PASSWORD: ${MYSQL_PASS}
+      AMPACHE_DB_USER: ampache
+      AMPACHE_DB_PASSWORD: ${AMPACHE_DB_PASSWORD}
+      AMPACHE_ADMIN_USER: elyazid
+      AMPACHE_ADMIN_EMAIL: admin@example.com
+      AMPACHE_ADMIN_PASSWORD: ${AMPACHE_ADMIN_PASSWORD}
+    volumes:
+      - ./data/config:/var/www/config
+      - ./data/mysql:/var/lib/mysql
+      - ./data/log:/var/log/ampache
+      - /home/elyazid/music:/media:ro
