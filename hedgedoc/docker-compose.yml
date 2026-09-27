@@ -14,7 +14,12 @@ services:
   app:
     image: quay.io/hedgedoc/hedgedoc:1.12.0
     environment:
-      - CMD_DB_URL=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@database:5432/hedgedoc
+      - CMD_DB_DIALECT=postgres
+      - CMD_DB_HOST=database
+      - CMD_DB_PORT=5432
+      - CMD_DB_USERNAME=${POSTGRES_USER}
+      - CMD_DB_PASSWORD=${POSTGRES_PASSWORD}
+      - CMD_DB_DATABASE=hedgedoc
       - CMD_DOMAIN=hedgedoc.elyazid.dev
       - CMD_URL_ADDPORT=false
       - CMD_PROTOCOL_USESSL=true

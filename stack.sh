@@ -11,7 +11,7 @@
 set -u
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-APPS=(ampache cloudflared hedgedoc jellyfin kavita site stirling-pdf)
+APPS=(ampache cloudflared hedgedoc jellyfin kavita linkwarden site stirling-pdf)
 
 usage() {
     echo "usage: $0 <up|down|pull|ps|restart|config> [app ...]"
