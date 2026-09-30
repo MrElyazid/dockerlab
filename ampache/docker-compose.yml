@@ -23,4 +23,4 @@ services:
       - ./data/mysql:/var/lib/mysql
       - ./data/log:/var/log/ampache
       - ./php/99-ampache.ini:/etc/php/8.5/apache2/conf.d/99-ampache.ini:ro
-      - /home/elyazid/music:/media:ro
+      - /home/elyazid/music:/media
