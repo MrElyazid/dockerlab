@@ -1,6 +1,6 @@
 services:
   ampache:
-    image: ampache/ampache:7.10.3
+    image: ampache/ampache:7.10.5
     container_name: ampache
     restart: unless-stopped
     ports:

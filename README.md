@@ -2,12 +2,6 @@
 
 A small self-hosted stack running on a laptop via a single Cloudflare Tunnel.
 
-On a new machine, some folders are needed:
-
-```bash
-mkdir -p ~/books ~/music ~/jellyfin
-```
-
 ## Conventions
 
 - One folder per app: `docker-compose.yml` + `.env` (where secrets are needed) + `data/`.
